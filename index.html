@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Number Panel — Admin</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="layout">
+<aside id="side">
+  <div class="brand"><div class="logo">SN</div><div><b>Number Panel</b><small>Admin Console</small></div></div>
+  <button class="nav active" data-page="dashboard">⌂ Dashboard</button>
+  <button class="nav" data-page="numbers">▦ Number Inventory</button>
+  <button class="nav" data-page="clients">♙ Clients</button>
+  <button class="nav" data-page="orders">↻ Orders</button>
+  <button class="nav" data-page="pricing">₹ Pricing</button>
+  <button class="nav" data-page="settings">⚙ Settings</button>
+</aside>
+<main>
+<header><button id="hamb">☰</button><h3>Admin Panel</h3><div class="admin">ADMIN</div></header>
+
+<section class="page active" id="dashboard"><h1>Dashboard</h1><p class="muted">Manage your demo number-reseller system.</p>
+<div class="stats"><div><small>Total Numbers</small><b id="total">0</b></div><div><small>Available</small><b id="avail">0</b></div><div><small>Clients</small><b id="clientsCount">0</b></div><div><small>Orders</small><b id="ordersCount">0</b></div></div>
+<div class="panel"><h2>Quick actions</h2><div class="actions"><button data-page="numbers">Add Number</button><button data-page="clients">View Clients</button><button data-page="orders">View Orders</button></div></div>
+<div class="notice"><b>Production note</b><p>Provider API keys, payments, authentication and personal data must stay on a secure backend, never in browser JavaScript or GitHub Pages.</p></div>
+</section>
+
+<section class="page" id="numbers"><div class="head"><div><h1>Number Inventory</h1><p class="muted">Demo inventory management.</p></div><button class="primary" id="addNumber">+ Add number</button></div>
+<div class="panel"><div class="table"><table><thead><tr><th>Number</th><th>Country</th><th>Type</th><th>Cost</th><th>Sell price</th><th>Status</th><th>Action</th></tr></thead><tbody id="numTable"></tbody></table></div></div></section>
+
+<section class="page" id="clients"><div class="head"><div><h1>Clients</h1><p class="muted">Demo client management.</p></div><button class="primary" id="addClient">+ Add client</button></div>
+<div class="panel"><div class="table"><table><thead><tr><th>Name</th><th>Email</th><th>Balance</th><th>Numbers</th><th>Status</th></tr></thead><tbody id="clientTable"></tbody></table></div></div></section>
+
+<section class="page" id="orders"><h1>Orders</h1><p class="muted">Number assignment history.</p><div class="panel"><div class="table"><table><thead><tr><th>Order ID</th><th>Client</th><th>Number</th><th>Amount</th><th>Status</th></tr></thead><tbody id="orderTable"></tbody></table></div></div></section>
+
+<section class="page" id="pricing"><h1>Pricing</h1><p class="muted">Set demo markup rules.</p><div class="panel form"><label>Default markup (%)<input id="markup" type="number" min="0" value="20"></label><button class="primary" id="savePricing">Save pricing</button></div></section>
+
+<section class="page" id="settings"><h1>Settings</h1><p class="muted">Panel settings.</p><div class="panel form"><label>Brand name<input id="brand" value="Number Panel"></label><label>Support email<input id="support" value="support@example.com"></label><button class="primary" id="saveSettings">Save settings</button></div></section>
+</main></div>
+<div id="modal" class="modal hidden"><div class="modalbox"><h2 id="modalTitle">Add</h2><div id="modalBody"></div><div class="modal-actions"><button id="cancel">Cancel</button><button class="primary" id="confirm">Save</button></div></div></div>
+<script src="app.js"></script></body></html>
